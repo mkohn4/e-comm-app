@@ -10,7 +10,10 @@ router.get('/', (req, res) => {
     //include everything from product table
     include: [Product],
   })
-  .then(dbCategoryData => res.json(dbCategoryData))
+  .then(dbCategoryData => {
+    console.log(dbCategoryData);
+    res.json(dbCategoryData);
+  })
   .catch(err => {
   console.log(err);
   res.status(400).json(err);
